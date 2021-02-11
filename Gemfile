@@ -11,6 +11,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'httparty', '~> 0.18.1'
 gem 'figaro', '~> 1.2'
+gem 'devise', '~> 4.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
