@@ -33,9 +33,9 @@
   <div class="card-panel card-top-spacer center-align">
     <h1>Welcome!</h1>
     <p class="welcome-subtitle">You need to either log in or sign up for a new account to start using this app.</p>
-    <div class="container center-align">
-      <%= link_to "Log In", new_user_session_path, class: "btn waves-effect waves-light light-blue accent-4" %>
-      <%= link_to "Sign Up", new_user_registration_path, class: "btn waves-effect waves-light" %>
+    <div class="container center-align welcome-btns">
+      <%= link_to "Log In", new_user_session_path, class: "welcome-btn-left btn waves-effect waves-light light-blue accent-4" %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "welcome-btn-right btn waves-effect waves-light" %>
     </div>
   </div>
 
