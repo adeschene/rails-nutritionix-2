@@ -1,0 +1,10 @@
+<%= form_with(model: meal) do |form| %>
+  <div class="field">
+    <%= form.label "Enter meal description:", class: "font-label" %>
+    <%= form.text_field :name, placeholder: "Example: 2 large baked potatoes" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Add", class: "btn light-blue accent-4" %>
+  </div>
+<% end %>

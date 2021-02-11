@@ -1,0 +1,23 @@
+<h2 class="center-align text-bold meals-header">Meals</h2>
+
+<% @meals.each do |meal| %>
+  <div class="card-panel card-flex row">
+    <img class="col s3" src="<%= meal.thumbnail %>">
+    <div class="card-flex col s10">
+      <p class="meal-name"><%= meal.name %></p>
+      <p class="meal-qty"><%= meal.quantity %> <%= meal.units %></p>
+      <p class="meal-cals"><span class="text-bold teal-text"><%= meal.calories %></span> Calories</p>
+      <%= link_to meal, method: :delete, data: { confirm: 'Are you sure?'}, class: "waves-effect waves-light btn-floating red lighten-1" do %>
+        <i class="material-icons">remove</i>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<br>
+
+<div class="card new-meal-card">
+  <div class="card-content">
+    <%= render 'form', meal: Meal.new %>
+  </div>
+</div>

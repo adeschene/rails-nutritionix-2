@@ -1,0 +1,39 @@
+.meals-header {
+  margin-bottom: .8em;
+}
+
+img {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.font-label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.card-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.meal-name {
+  width: 70px;
+}
+
+.meal-qty {
+  width: 180px;
+}
+
+.meal-cals {
+  width: 110px; 
+}
+
+.new-meal-card {
+  margin-bottom: 3em;
+}
