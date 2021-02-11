@@ -1,4 +1,4 @@
-Seven Ruby on Rails Bootcamp assignment.
+Seventh Ruby on Rails Bootcamp assignment.
 
 A simple calorie counter app with user accounts.
 
