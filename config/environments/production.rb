@@ -119,4 +119,14 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
   config.action_mailer.default_url_options = { host: 'http://rails-nutritionix-2.herokuapp.com/' }
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    address:              'smtp.sendgrid.net',
+    port:                 "25",
+    user_name:            ENV["SENDGRID_USERNAME"],
+    password:             ENV["SENDGRID_PASSWORD"],
+    domain:               ENV["SENDGRID_DOMAIN"],
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
 end
