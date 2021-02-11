@@ -1,0 +1,14 @@
+<nav>
+  <div class="nav-wrapper">
+    <%= link_to "Nutrionix API App", root_path, class: "brand-logo right" %>
+    <ul id="nav-mobile" class="left">
+      <% if user_signed_in? %>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"}, class: "" %></li>
+        <li><%= link_to "Edit Profile", edit_user_registration_path, class: "" %></li>
+      <% else %>
+        <li><%= link_to "Sign Up", new_user_registration_path, class: "" %></li>
+        <li><%= link_to "Sign In", new_user_session_path, class: "" %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

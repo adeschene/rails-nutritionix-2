@@ -3,6 +3,9 @@
     <%= form.label "Enter meal description:", class: "font-label" %>
     <%= form.text_field :name, placeholder: "Example: 2 large baked potatoes" %>
   </div>
+  <div class="field">
+    <%= form.number_field :user_id, id: :meal_user_id, value: current_user.id, type: :hidden %>
+  </div>
 
   <div class="actions">
     <%= form.submit "Add", class: "btn light-blue accent-4" %>

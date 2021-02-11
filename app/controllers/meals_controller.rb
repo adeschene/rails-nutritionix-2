@@ -1,10 +1,14 @@
 class MealsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
+  # Index gets the current user's meals unless they aren't signed in
   def index
-    @meals = Meal.all
+    @meals = current_user.meals unless !user_signed_in?
   end
 
   def create
-    @meal = Meal.new(meal_params)
+    # Add the meal to the current user's meals
+    @meal = current_user.meals.build(meal_params)
 
     hash = NutritionixService.new.get_meal_by_name(@meal.name)
 
@@ -27,7 +31,8 @@ class MealsController < ApplicationController
   end
 
   def destroy
-    @meal = Meal.find(params[:id])
+    # Make sure that the meal we're destroying is the current user's meal
+    @meal = current_user.meals.find(params[:id])
     @meal.destroy
 
     redirect_to meals_path, notice: "Meal successfully removed."
@@ -35,6 +40,6 @@ class MealsController < ApplicationController
 
   private
     def meal_params
-      params.require(:meal).permit(:name)
+      params.require(:meal).permit(:name, :user_id)
     end
 end
