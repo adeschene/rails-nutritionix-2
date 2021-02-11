@@ -1,3 +1,4 @@
+<%# Render the user's home screen (list of meals) if they are signed in %>
 <% if user_signed_in? %>
 
   <h2 class="center-align text-bold meals-header">Meals</h2>
@@ -20,14 +21,22 @@
 
   <div class="card new-meal-card">
     <div class="card-content">
+      <%# The form expects a new Meal instance, which is normally created and given to the 'new' method by way of the 'edit' method.
+      Since we're using the new method here and bypassing the 'edit' method, we must directly provide a new Meal instance %>
       <%= render 'form', meal: Meal.new %>
     </div>
   </div>
 
+<%# Render the welcome screen if user is not signed in %>
 <% else %>
 
-  <div class="card-panel center-align">
+  <div class="card-panel card-top-spacer center-align">
     <h1>Welcome!</h1>
+    <p class="welcome-subtitle">You need to either log in or sign up for a new account to start using this app.</p>
+    <div class="container center-align">
+      <%= link_to "Log In", new_user_session_path, class: "btn waves-effect waves-light light-blue accent-4" %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn waves-effect waves-light" %>
+    </div>
   </div>
 
 <% end %>

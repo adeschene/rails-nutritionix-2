@@ -18,6 +18,18 @@ body {
   background: #36ff8d;
 }
 
+.form-spacer {
+  margin-bottom: 1em;
+}
+
+.card-top-spacer {
+  margin-top: 5em;
+}
+
+.inner-card-top-spacer {
+  margin-top: 3em;
+}
+
 /* CSS for styling alerts/notices
 (source: https://codepen.io/j_holtslander/pen/MzNPbP) */
 .alert .card-content .material-icons {
