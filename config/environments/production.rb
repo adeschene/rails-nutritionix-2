@@ -120,12 +120,11 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'rails-nutritionix-2.herokuapp.com/' }
   ActionMailer::Base.smtp_settings = {
-    :user_name => ENV["SENDGRID_USERNAME"],
-    :password => ENV["SENDGRID_PASSWORD"],
-    :domain => 'herokuapp.com',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
+    domain:         'herokuapp.com',
+    address:        "smtp.sendgrid.net",
+    port:            587,
+    authentication: :plain,
+    user_name:      'apikey',
+    password:       ENV['SENDGRID_API_KEY']
   }
 end
